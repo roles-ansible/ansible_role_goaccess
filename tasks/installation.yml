@@ -1,0 +1,28 @@
+---
+- name: install apt-transport-https for secure repo
+  become: true
+  apt:
+    name: apt-transport-https
+    state: "{{ goaccess__state }}"
+    update_cache: yes
+
+- name: add goaccess apt_repository
+  become: true
+  apt_repository:
+    repo: "deb https://deb.goaccess.io/ {{ ansible_distribution_release | lowercase }} main"
+    state: present
+    filename: goaccess
+
+- name: add goaccess apt_key
+  become: true
+  apt_key:
+    url: https://deb.goaccess.io/gnugpg.key
+    state: present
+
+- name: install goaccess
+  become: true
+  apt:
+    name: goaccess
+    state: "{{ goaccess__state }}"
+    update_cache: yes
+    cache_valid_time: 3600

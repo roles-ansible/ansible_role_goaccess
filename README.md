@@ -1,5 +1,8 @@
-# ansible_role_template
-Template for Ansible roles
+ ansible role goaccess
+===========================
+Ansible roles to install [goaccess](https://github.com/allinurl/goaccess.git) at Debian/Ubuntu systems.
+
+**UNDER DEVELOPEMENT**
 
  Testing
 ----------
