@@ -9,7 +9,7 @@
 - name: add goaccess apt_repository
   become: true
   apt_repository:
-    repo: "deb https://deb.goaccess.io/ {{ ansible_distribution_release | lowercase }} main"
+    repo: "deb https://deb.goaccess.io/ {{ ansible_distribution_release | lower }} main"
     state: present
     filename: goaccess
 
