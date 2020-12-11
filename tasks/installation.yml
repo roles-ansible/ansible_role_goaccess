@@ -6,18 +6,18 @@
     state: "{{ goaccess__state }}"
     update_cache: yes
 
+- name: add goaccess apt_key
+  become: true
+  apt_key:
+    url: https://deb.goaccess.io/gnugpg.key
+    state: present
+
 - name: add goaccess apt_repository
   become: true
   apt_repository:
     repo: "deb https://deb.goaccess.io/ {{ ansible_distribution_release | lower }} main"
     state: present
     filename: goaccess
-
-- name: add goaccess apt_key
-  become: true
-  apt_key:
-    url: https://deb.goaccess.io/gnugpg.key
-    state: present
 
 - name: install goaccess
   become: true
