@@ -1,5 +1,8 @@
 ---
 goaccess__state: present
+goaccess_systemd: true
+goaccess__logfiles: '/var/log/apache2/access.log'
+goaccess__webfiles: '/var/www/html/report/index.html'
 
 # should we do a version check? (recomended)
 submodules_versioncheck: false
