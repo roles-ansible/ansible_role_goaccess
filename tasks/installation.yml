@@ -4,7 +4,7 @@
   apt:
     name: apt-transport-https
     state: "{{ goaccess__state }}"
-    update_cache: yes
+    update_cache: true
 
 - name: add goaccess apt_key
   become: true
@@ -24,5 +24,5 @@
   apt:
     name: goaccess
     state: "{{ goaccess__state }}"
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 3600
